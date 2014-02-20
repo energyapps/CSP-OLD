@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.js'></script>
+  <link href='http://api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.css' rel='stylesheet' />
+  <!--[if lte IE 8]>
+    <link href='//api.tiles.mapbox.com/mapbox.js/v1.4.0/mapbox.ie.css' rel='stylesheet'>
+  <![endif]-->
+<style>
+  /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+    body { margin:0; padding:0; font-family: arial;} 
+#map {
+ width:100%;
+height:600px;
+} 
+.popup {
+    position: absolute;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+.button {
+
+  padding-bottom:3px;
+  padding-top:10px;
+  width: 200px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 400;
+  border-bottom: 2px solid #494947;
+  line-height: 16px;
+}
+
+.button p {
+  text-decoration: none;
+}
+
+.button:hover {
+border-bottom: 2px solid #B7DDA6;
+}
+
+.button.active {
+border-bottom: 2px solid #B7DDA6;
+text-decoration: none;
+}
+
+/*popup style*/
+
+.leaflet-popup-content {
+  max-width: 200px;
+  margin: 10px;
+  color: #000;
+}
+
+.leaflet-popup-content p {
+  margin: 0px !important;
+  padding-bottom: 0px !important;
+  border-bottom: 0px !important;
+  color: #000 !important;
+}
+
+.leaflet-popup-content h2 {
+  font-size: 15px;
+  margin-bottom: 5px;
+  text-align: center;
+  color: #000 !important;
+}
+
+ /*++++++++++++++++++++++++++++++++++++++++++++
+                    Pull Tab
+  ++++++++++++++++++++++++++++++++++++++++++++*/
+
+  .twitter-widget {
+    position: absolute;
+    left: 0;
+    top: 10px;
+    width: 100px;
+    
+  }
+
+  a.pull-tab.active {
+    left: 0px;
+    background: #494947;
+    text-decoration: none;
+    color: #fff;
+  }
+
+  a#pull-title {
+    left: 0px;
+    background: #494947;
+    text-decoration: none;
+    color: #fff;
+    top:10px;
+    width: 417px;
+  }
+
+  a.pull-tab:hover {
+    background-color: #494947;
+    color: #B7DDA6;
+  }
+  a.pull-tab {
+    font-size: 16px;
+    padding-left: 14px;  
+    padding-top:5px;
+    position: absolute;
+    z-index: 5;
+    left: -1400px;
+    top:38px;
+    width: 160px;
+    height: 22px;
+    box-shadow: 1px 1px 2px #111;
+    border-radius: 0px 3px 3px 0px;
+    -moz-border-radius:0px 3px 3px 0px;
+    -webkit-border-radius:0px 3px 3px 0px;
+    -moz-transition: left 0.2s ease;
+    -o-transition: left 0.2s ease;
+    -webkit-transition: left 0.2s ease;
+    transition: left 0.2s ease;
+  }
+  a.closed {
+    background-color: transparent;
+    position:absolute;
+    width: 40px;
+    margin-left:-40px;
+    margin-top:43px;
+    background-position: 2px 2px;
+    z-index:5;
+    left: -1400px;
+  }
+  a.closed.active {
+    left: 250px;
+    color: #fff;
+    text-decoration: none;
+    z-index: 8;
+    -moz-transition: 0.3s ease;
+    -o-transition: 0.3s ease;
+    -webkit-transition: 0.3s;
+    transition: 0.3s ease;
+  }
+
+  .about-data.active {
+    left:0px;
+    background: #494947;
+    padding-top:20px; 
+    box-shadow: 1px 1px 2px #111;
+
+    -moz-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    -webkit-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+
+  }
+  .about-data {
+    position: absolute;
+    left: -1400px;
+    width: 230px;
+    height: 260px;
+    z-index:5;
+    top: 38px;
+    background: #878792;
+    border-radius: 0px 3px 3px 0px;
+    -moz-border-radius:0px 3px 3px 0px;
+    -webkit-border-radius:0px 3px 3px 0px;
+    -moz-transition: left 0.2s ease;
+    -o-transition: left 0.2s ease;
+    -webkit-transition: left 0.2s ease;
+    transition: left 0.2s ease;
+  }
+  
+  #data-text-container {
+    position:relative;
+    top:0px;
+    left:0px;
+    width:230px;
+    bottom:0px;
+    height:350px;
+    margin-left:15px;
+  }
+
+  #data-text-container a {
+    text-decoration: none;
+    color: #fff;
+
+  }
+
+.leaflet-bottom {
+  display: none;
+}
+
+@media (max-width: 570px) {
+    #map {
+        height: 320px !important;
+    }
+    .button {
+      font-size: 12px;
+      line-height: 13px;
+      padding-top: 7px;
+      padding-bottom: 1px;
+    }
+    #data-text-container {
+      height: 200px;
+    }
+    .about-data {
+      height: 183px;
+      top: 34px;
+    }
+    .leaflet-bottom {
+      display: block !important;
+    }
+    .leaflet-top  {
+      display: none;
+    }
+    a#pull-title {
+      width: 100%
+    }
+    a.pull-tab {
+      font-size: 14px;
+      height: 20px;
+    }
+
+}
+@media (max-width: 480px) {
+    #map {
+        height: 255px !important;
+    }
+
+}
+@media (max-width: 320px) {
+    #map {
+        height: 320px !important;
+    }
+   
+}
+
+
+
+</style>
+
+</head>
+<body>
+        <h2><a class="pull-tab" id="pull-title" href="#">Ranking the Top Green Power Providers</a></h2>
+
+
+
+<div class="twitter-widget">
+        
+        <h2><a class="pull-tab" id="tably" href="#">See All Leaders</a></h2>
+        <a class="closed active" href="#">x</a>
+        <div class='about-data active'>
+          <div id='data-text-container'>
+              <a href="#all"><div id="b1" class="button active" >All</div></a>
+              <a href="#operational"><div id="b2" class="button" >Operational</div></a>
+              <a href="#developing"><div id="b3" class="button" >In Development</div></a>            
+          </div>
+        </div>
+    </div>
+<div id='map'></div>
+<script src="spider.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.0/jquery.min.js"></script>
+<script type='text/javascript'>
+
+
+</script>
+<script src="app0.js"></script>
+<script src="app1.js"></script>
+</body>
+</html>

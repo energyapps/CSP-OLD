@@ -1,0 +1,79 @@
+
+
+@media (min-width:901px){
+
+}
+
+@media (max-width:960px){}
+
+@media (max-width:790px){}
+
+@media (max-width:700px){
+	#map {
+		z-index: 2
+	}
+
+	#under-map-left {
+		top: 0px !important;
+	}
+
+
+/********************
+info box
+**************************/
+/*	#under-map-left {
+		top: 0;
+		left: 0px;
+		z-index: 0;
+		position: absolute;
+	}
+
+	.info-bar.active {
+		top: 60px;
+	}
+
+	#info-container.active {
+		top: 10px !important;
+		bottom: auto;
+	}
+
+	.under-map-button  {
+		margin-top: 0;
+	}*/
+/********************
+legend
+**************************/
+	#under-map-right, #under-map-left {
+	width: 100%		
+	}
+
+}
+
+@media (max-width:570px){
+	#map{
+		height:320px !important;
+	}
+	  #scroll-area {
+      width: 20px;
+      height: 100%;
+      position: absolute;
+      z-index: 2000;
+      right: 0px;
+    } 
+	
+}
+
+@media (max-width:480px){
+	#map{
+		height:255px !important;
+	}
+}
+
+@media (max-width:339px) {.position-1 {
+		line-height: 20px;
+	}}
+
+@media (max-width:320px){#map{height:320px !important;}}
+
+
+

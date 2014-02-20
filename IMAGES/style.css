@@ -1,0 +1,78 @@
+@purple1: #a000ed;
+@purple2: #9400f2;
+@purple3: #831ef5;
+@purple4: #7237f7;
+@blue1: #6348fd;
+@blue2: #5159ff;
+@blue3: #3d63ff;
+@blue4: #527bdd;
+@blue5: #6092b7;
+@green1: #69a990;
+@green2: #6cbd63;
+@green3: #6ed521;
+@green4: #6deb00;
+@green5: #82f000;
+@green6: #9bf500;
+@green7: #b0fa00;
+@green8: #cafb00;
+@yellow1: #e3ff00;
+@yellow2: #fcff00;
+@yellow3: #f9f600;
+@yellow4: #f8e500;
+@yellow5: #f6d800;
+@orange1: #f6cb00;
+@orange2: #f5b900;
+@orange3: #f4ac00;
+@orange4: #f09800;
+@orange5: #e96e00;
+@red1: #e45700;
+@red2: #e24004;
+@red3: #dc270b;
+@red4: #d7000f;
+@grey: #dcdcdc;
+
+
+
+#usaclip, #hawaiisolarclip {
+  polygon-gamma: .65;
+  polygon-fill: @purple1;
+  [DNIANN > 1030] {polygon-fill: @purple2}
+  [DNIANN > 1380] {polygon-fill: @purple3}
+  [DNIANN > 1720] {polygon-fill: @purple4}
+  [DNIANN > 2060] {polygon-fill: @blue1}
+  [DNIANN > 2310] {polygon-fill: @blue2}
+  [DNIANN > 2650] {polygon-fill: @blue3}
+  [DNIANN > 2990] {polygon-fill: @blue4}
+  [DNIANN > 3240] {polygon-fill: @blue5}
+  [DNIANN > 3480] {polygon-fill: @green1}
+  [DNIANN > 3620] {polygon-fill: @green2}
+  [DNIANN > 3910] {polygon-fill: @green3}
+  [DNIANN > 4050] {polygon-fill: @green4}
+  [DNIANN > 4200] {polygon-fill: @green5}
+  [DNIANN > 4340] {polygon-fill: @green6}
+  [DNIANN > 4490] {polygon-fill: @green7}
+  [DNIANN > 4630] {polygon-fill: @green8}
+  [DNIANN > 4770] {polygon-fill: @yellow1}
+  [DNIANN > 4920] {polygon-fill: @yellow2}
+  [DNIANN > 5060] {polygon-fill: @yellow3}
+  [DNIANN > 5200] {polygon-fill: @yellow4}
+  [DNIANN > 5350] {polygon-fill: @yellow5}
+  [DNIANN > 5490] {polygon-fill: @orange1}
+  [DNIANN > 5630] {polygon-fill: @orange2}
+  [DNIANN > 5780] {polygon-fill: @orange3}
+  [DNIANN > 6020] {polygon-fill: @orange4}
+  [DNIANN > 6260] {polygon-fill: @orange5}
+  [DNIANN > 6510] {polygon-fill: @red1}
+  [DNIANN > 6850] {polygon-fill: @red2}
+  [DNIANN > 7090] {polygon-fill: @red3}
+  [DNIANN > 7240] {polygon-fill: @red4} 
+  [zoom>0][zoom<5] { polygon-opacity:0.85; }
+  [zoom=5] { polygon-opacity:0.8; }
+  [zoom=6] { polygon-opacity:0.75; }
+  [zoom=7] { polygon-opacity:0.7; }
+  [zoom>7] { polygon-opacity:0.65; }
+  }
+
+
+
+

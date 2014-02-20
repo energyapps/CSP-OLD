@@ -1,0 +1,101 @@
+/* Icons!!!*/
+#icon-all {
+	background-image:url('/sites/prod/files/all.png');
+	background-repeat:no-repeat;
+	background-position:center;
+}
+
+#icon-all.active {
+	background-image:url('/sites/prod/files/all_on.png');
+}
+
+
+#icon-blue-trough {
+background-image:url('/sites/prod/files/blue_trough.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-blue-trough.active {
+background-image:url('/sites/prod/files/blue_trough_on.png');
+}
+
+#icon-orange-trough {
+background-image:url('/sites/prod/files/orange_trough.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-orange-trough.active {
+background-image:url('/sites/prod/files/orange_trough_on.png');
+}
+
+#icon-blue-dish {
+background-image:url('/sites/prod/files/blue_dish.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-blue-dish.active {
+background-image:url('/sites/prod/files/blue_dish_on.png');
+}
+
+#icon-orange-dish {
+background-image:url('/sites/prod/files/orange_dish.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-orange-dish.active {
+background-image:url('/sites/prod/files/orange_dish_on.png');
+}
+
+#icon-blue-tower {
+background-image:url('/sites/prod/files/blue_tower.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-blue-tower.active {
+background-image:url('/sites/prod/files/blue_tower_on.png');
+}
+
+#icon-orange-tower {
+background-image:url('/sites/prod/files/orange_tower.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-orange-tower.active {
+background-image:url('/sites/prod/files/orange_tower_on.png');
+}
+
+#icon-blue {
+background-image:url('/sites/prod/files/blue.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-blue.active {
+background-image:url('/sites/prod/files/blue_on.png');
+}
+
+#icon-orange {
+background-image:url('/sites/prod/files/orange.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-orange.active {
+background-image:url('/sites/prod/files/orange_on.png');
+}
+
+#icon-orange-new {
+background-image:url('/sites/prod/files/orange_new.png');
+background-repeat:no-repeat;
+background-position:center;
+}
+
+#icon-orange-new.active {
+background-image:url('/sites/prod/files/orange_new_on.png');
+}
